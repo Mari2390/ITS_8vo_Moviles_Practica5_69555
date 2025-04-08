@@ -14,7 +14,7 @@ export default function LoginScreen() {
     try {
       const token = await api.login(username, password);
       await AsyncStorage.setItem('token', token);
-      router.replace('index2');
+      router.replace('/index2');
     } catch (error: unknown) {
       if (error instanceof Error) {
         Alert.alert('Error de inicio de sesión', error.message);
@@ -27,7 +27,7 @@ export default function LoginScreen() {
 
   const goToRegister = () => {
     console.log('Intentando navegar a register...');
-    router.push('register');
+    router.push('/register');
   };
 
   return (
